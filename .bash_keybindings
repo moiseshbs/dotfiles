@@ -1,0 +1,7 @@
+bind -x '"\C-f": search_repositories'
+
+bind -x '"\C-b": fzbranch'
+
+bind -x '"\C-h": fzhistory'
+
+bind -x '"\C-o": fzsln'
