@@ -6,6 +6,7 @@ function search_repositories() {
     fi
 
     cd "$results" || return
+    cls
 }
 
 function fzhistory() {
@@ -25,9 +26,9 @@ function vf() {
 
 function fzsln() {
     local sln=$(fd '\.sln$' /c/Git | fzf)
+    cd "$(dirname "$sln")" || return
     if [ -n "$sln" ]; then
-        cd "$(dirname "$sln")" || return
-        devenv.exe "$sln" &
+        start "$sln"
         cls
     fi
 }
@@ -45,6 +46,7 @@ AVAILABLE ALIASES:
     gdir        → cd /c/Git
     cls         → clear
     ..          → cd ..
+    ex          → explorer .
 
   Git:
     gpdev       → git pull origin develop
@@ -76,9 +78,9 @@ KEYBOARD SHORTCUTS:
 
 CONFIGURATION FILES:
 ------------------------------------------------------------------
-  ~/.bash_profile         → Main shell configuration
-  ~/.dotfiles/.bash_aliases    → Aliases
-  ~/.dotfiles/.bash_functions  → Custom functions
+  ~/.bash_profile                 → Main shell configuration
+  ~/.dotfiles/.bash_aliases       → Aliases
+  ~/.dotfiles/.bash_functions     → Custom functions
   ~/.dotfiles/.bash_keybindings   → Key bindings
 
 ===================================================================

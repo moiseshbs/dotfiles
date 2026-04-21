@@ -1,7 +1,7 @@
-bind -x '"\C-f": search_repositories'
+bind '"\C-f":"search_repositories\n"'
 
-bind -x '"\C-b": fzbranch'
+bind '"\C-b":"fzbranch\n"'
 
-bind -x '"\C-h": fzhistory'
+bind '"\C-h":"fzhistory\n"'
 
-bind -x '"\C-o": fzsln'
+bind '"\C-o":"fzsln\n"'
